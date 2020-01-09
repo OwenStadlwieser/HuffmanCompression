@@ -1,0 +1,28 @@
+Name: Owen Stadlwieser
+ID: 1578040
+Class: CMPUT 274, Fall 2019
+Assignment 1: Frequency Counter
+
+Included Files:
+- util.py
+- README
+
+- util.py: Runs five different functions to compress and decompress files using a huffman tree. To compress a file the function compress() is used. This function has 3 inputs: a huffman tree, a uncompressed file stream, and a compressed file stream. It first calls write_tree() which uses the pickle module to dump the tree to the compressed file stream. It proceeds to read in each byte from the uncompressed stream and write their compressed form to compressed stream using the BitReader and BitWriter classes from bitio.py. 
+	To decompress a file the decompress() function is used. The inputs for this function are a compressed file 
+stream and a uncompressed stream. The function first calls read_tree() which takes the compressed file stream and outputs a huffman tree using the pickle module. After calling read_tree() it calls decode_byte() which reads in one bit at a time from the compressed stream and uses them to traverse down the huffman tree until it reaches a leaf, at which it returns the byte the leaf stores. The returned bytes are then written to the uncompressed file stream.
+
+Running the code:
+To decompress a file open a terminal and navigate to the "wwwroot/" directory from there use this command "python3 ../webserver.py" to run your local server. Using a webbrowser navigate to "http://localhost:8000" to view the websit and image of Huffman. 
+To run the compress, move the desired file to the wwwroot directory and from the terminal navigate to "wwwroot"
+and run the command "python3 ../compress.py filename.ext" where filename is the name of the file you wish to compress and ext is the extension. To decompress the file you just compressed use the previously stated decompressing instructions but instead of using "http://localhost:8000" as your url navigate to "http://localhost:8000/filename.ext" through your web browser.
+for j in range(0, nos):
+	mylist.insert(0,1)
+while(len(mylist) > 1 and (i+1) < len(mylist)):
+	if(mylist[i] == mylist[i+1]):
+		x = mylist.pop(i)
+		y = mylist.pop(i)
+		mylist.insert(i, x+1)
+		if i > 0:
+			i = i - 1
+	else:
+		i = i +1
